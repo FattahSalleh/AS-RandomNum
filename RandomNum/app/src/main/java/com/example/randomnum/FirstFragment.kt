@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import org.w3c.dom.Text
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -27,7 +28,14 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.random_button).setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+
+            val showCountTextView = view.findViewById<TextView>(R.id.textview_first)
+
+            val currentCount = showCountTextView.text.toString().toInt()
+
+            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(currentCount)
+
+            findNavController().navigate(action)
         }
 
         // find the toast_button by its ID and set a click listener
