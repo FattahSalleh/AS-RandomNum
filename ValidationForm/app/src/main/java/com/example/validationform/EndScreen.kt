@@ -1,5 +1,7 @@
 package com.example.validationform
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -23,6 +25,7 @@ class EndScreen : AppCompatActivity() {
         val tvIC = findViewById<TextView>(R.id.tvICFill)
         val tvMobileNumber = findViewById<TextView>(R.id.tvMobileNumberFill)
         val tvFullName = findViewById<TextView>(R.id.tvFullName)
+        val btnToFeed = findViewById<Button>(R.id.btnToFeed)
 
         val firstName = intent.getStringExtra("FirstName")
         val lastName = intent.getStringExtra("LastName")
@@ -36,6 +39,12 @@ class EndScreen : AppCompatActivity() {
         tvIC.text = iC
         tvMobileNumber.text = mobileNumber
         tvFullName.text = "$firstName $lastName"
+
+        btnToFeed.setOnClickListener {
+            val intent = Intent(this, ActivityFeed::class.java)
+
+            startActivity(intent)
+        }
 
     }
 
