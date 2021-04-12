@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class FeedAdapter(private val feedList: List<FeedItem>) :
     RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
@@ -23,15 +24,21 @@ class FeedAdapter(private val feedList: List<FeedItem>) :
         val currentItem = feedList[position]
 
         holder.imageView.setImageResource(currentItem.imageResource)
+//        holder.bindView(feedList[position])
         holder.textViewTop.text = currentItem.textTop
         holder.textViewBottom.text = currentItem.textBottom
     }
 
     override fun getItemCount() = feedList.size
 
-
     class FeedViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
         val imageView: ImageView = itemView.findViewById(R.id.ivFeedImage)
+
+//        fun bindView(ivFeedImage: FeedItem){
+//            imageView.setImageResource(ivFeedImage.imageResource)
+//        }
+
         val textViewTop: TextView = itemView.findViewById(R.id.tvFeedTextTop)
         val textViewBottom: TextView = itemView.findViewById(R.id.tvFeedTextBottom)
     }

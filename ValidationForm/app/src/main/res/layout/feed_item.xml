@@ -11,28 +11,28 @@
 
         <ImageView
             android:id="@+id/ivFeedImage"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginEnd="8dp"
-            android:src="@drawable/ic_connect" />
+            android:src="@drawable/ic_web" />
 
         <TextView
             android:id="@+id/tvFeedTextTop"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/ivFeedImage"
-            android:text="Line 1"
+            android:text="Movie Title"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvFeedTextBottom"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvFeedTextTop"
             android:layout_toEndOf="@+id/ivFeedImage"
-            android:text="Line 2" />
+            android:text="Movie Description" />
 
     </RelativeLayout>
 
